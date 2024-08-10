@@ -4,7 +4,7 @@ const port = 3000
 
 require('dotenv').config()
 
-var CORS_LIST =
+const CORS_LIST =
     process.env.CORS_LIST;
 
 var whitelist = (CORS_LIST) ? CORS_LIST.split(';') : [];
@@ -15,7 +15,7 @@ const cors = require('cors')
 var corsOptions = {
     origin: function (origin, callback) {
 
-        if (origin === undefined) {
+        if (origin === undefined || whitelist.length == 0) {
             callback(null, true)
         } else {
             if (whitelist.indexOf(origin) !== -1) {
