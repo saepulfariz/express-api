@@ -4,4 +4,5 @@ DB_PASSWORD=
 DB_NAME=db_express_api
 DB_PORT=3306
 
+PORT=3000
 CORS_LIST=http://localhost:4000;http://localhost
